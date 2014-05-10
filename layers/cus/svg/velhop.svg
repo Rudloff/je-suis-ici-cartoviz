@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="17.688999"
+   height="17.690001"
+   viewBox="0 0 17.688999 17.690001"
+   enable-background="new 0 0 80 33.667"
+   xml:space="preserve"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="velhop.svg"><metadata
+   id="metadata56"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs54" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1280"
+   inkscape:window-height="1000"
+   id="namedview52"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="6.0875"
+   inkscape:cx="-6.2729158"
+   inkscape:cy="10.6185"
+   inkscape:window-x="1280"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<g
+   id="g3"
+   transform="translate(-46.93,-9.762)">
+	<defs
+   id="defs5">
+		<rect
+   id="SVGID_1_"
+   x="-276.16699"
+   y="-13.831"
+   width="510.23599"
+   height="354.33099" />
+	</defs>
+	<clipPath
+   id="SVGID_2_">
+		<use
+   xlink:href="#SVGID_1_"
+   overflow="visible"
+   id="use9"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="80"
+   height="33.667" />
+	</clipPath>
+	
+	
+	
+	
+	
+	
+	
+	<path
+   clip-path="url(#SVGID_2_)"
+   d="m 55.775,27.452 c 4.883,0 8.844,-3.96 8.844,-8.845 0,-4.884 -3.961,-8.845 -8.844,-8.845 -4.886,0 -8.845,3.961 -8.845,8.845 10e-4,4.885 3.96,8.845 8.845,8.845"
+   id="path25"
+   inkscape:connector-curvature="0"
+   style="fill:#93c01c" />
+</g>
+
+<g
+   id="g42"
+   transform="translate(-46.93,-9.762)">
+	<defs
+   id="defs44">
+		<rect
+   id="SVGID_6_"
+   x="-276.16699"
+   y="-13.831"
+   width="510.23599"
+   height="354.33099" />
+	</defs>
+	<clipPath
+   id="SVGID_7_">
+		<use
+   xlink:href="#SVGID_6_"
+   overflow="visible"
+   id="use48"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="80"
+   height="33.667" />
+	</clipPath>
+	<path
+   clip-path="url(#SVGID_7_)"
+   d="m 51.115,20.013 c -0.271,0 -0.542,-0.116 -0.74,-0.318 -0.202,-0.199 -0.318,-0.47 -0.318,-0.741 0,-0.575 0.485,-1.059 1.061,-1.059 0,0 4.811,0.01 5.995,0.015 -0.627,-0.618 -1.653,-1.628 -1.665,-1.634 -0.398,-0.456 -0.36,-1.095 0.089,-1.512 0.193,-0.179 0.447,-0.272 0.719,-0.263 0.285,0.008 0.555,0.136 0.747,0.342 l 3.983,4.111 -0.152,0.157 c 0,0 -3.845,3.941 -3.831,3.925 -0.175,0.223 -0.429,0.356 -0.705,0.377 -0.278,0.02 -0.555,-0.079 -0.761,-0.27 -0.229,-0.214 -0.357,-0.488 -0.362,-0.773 -0.004,-0.263 0.101,-0.518 0.301,-0.716 0,0 1.124,-1.092 1.703,-1.653"
+   id="path50"
+   inkscape:connector-curvature="0"
+   style="fill:#ffffff" />
+</g>
+</svg>
