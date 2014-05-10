@@ -17,6 +17,8 @@ var dataSets = [];
 dataSets.push(SpectacleConfig())
 dataSets.push(VelhopConfig())
 dataSets.push(ParkingConfig())
+dataSets.push(UnistraConfig())
+dataSets.push(ArchiConfig())
 
 var dataProvider = new MosaicDistil.CsvDataProvider({
     dataSets : dataSets,
@@ -104,6 +106,53 @@ function ParkingConfig() {
                         })),
                         geometry : this._toGeometryPointFromCoords(obj, 'go/y',
                                 'go/x')
+                    }
+                }
+            });
+}
+
+function UnistraConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "unistra.csv",
+                "url" : "https://raw.githubusercontent.com/Rudloff/open-data-strasbourg/master/unistra.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'Unistra'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'id', 'related_to_poi', 'tags', 'time_created', 'time_modified', 'type' ],
+                            convert : {
+                                'name' : 'label'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPointFromCoords(obj, 'latitude',
+                                'longitude')
+                    }
+                }
+            });
+}
+
+function ArchiConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "archi-strasbourg.csv",
+                "url" : "https://raw.githubusercontent.com/Rudloff/open-data-strasbourg/master/archi-strasbourg.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'ArchiStrasbourg'
+                        }, this._toProperties(obj, {
+                            convert : {
+                                'nom' : 'label'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPointFromCoords(obj, 'latitude',
+                                'longitude')
                     }
                 }
             });

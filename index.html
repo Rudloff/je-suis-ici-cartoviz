@@ -115,6 +115,8 @@ p,h3 {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#" data-map-layer-selector="cus">Services publiques</a></li>
+                    <li><a href="#" data-map-layer-selector="unistra">Enseignement supérieur et recherche</a></li>
+                    <li><a href="#" data-map-layer-selector="archi">Architecture</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -149,9 +151,7 @@ p,h3 {
             data-utfgrid-url="tiles/layers/cus/{z}/{x}/{y}.grid.json?callback={cb}"
             data-panel="#details" data-action="mouseover,click">
             <div class="attribution">
-                &copy; <a href="http://opendata.paris.fr/">Ville de Paris</a> &copy;
-                <a href="http://data.iledefrance.fr">Paris Région</a> &copy; <a
-                    href="http://data.gouv.fr">Etalab</a>
+                &copy; <a href="http://www.strasbourg.eu/ma-situation/professionnel/open-data/donnees">Communauté urbaine de Strasbourg</a>
             </div>
             <div data-template="default">
                 <div class="panel panel-default">
@@ -188,6 +188,58 @@ p,h3 {
             <script data-template="Parking" type="text/template">
                  <div class="panel panel-default">
                     <div class="panel-heading"><img src="layers/cus/svg/parking.svg" class="category-icon" /> Parking <%-data.properties.label%></div>
+                 </div>
+            </script>
+
+
+        </div>
+        <div data-map-layer="unistra" data-visible="true"
+            data-tiles-url="tiles/layers/unistra/{z}/{x}/{y}.png"
+            data-utfgrid-url="tiles/layers/unistra/{z}/{x}/{y}.grid.json?callback={cb}"
+            data-panel="#details" data-action="mouseover,click">
+            <div class="attribution">
+                &copy; <a href="http://mob.u-strasbg.fr/data/">Université de Strasbourg</a>
+            </div>
+            <div data-template="default">
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-property="data.properties.label"></div>
+                    <div class="panel-body">
+                        <div data-property="data.properties.type"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div data-map-layer="archi" data-visible="true"
+            data-tiles-url="tiles/layers/archi/{z}/{x}/{y}.png"
+            data-utfgrid-url="tiles/layers/archi/{z}/{x}/{y}.grid.json?callback={cb}"
+            data-panel="#details" data-action="mouseover,click">
+            <div class="attribution">
+                &copy; <a href="http://archi-strasbourg.org/">Archi-Strasbourg</a>
+            </div>
+            <div data-template="default">
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-property="data.properties.label"></div>
+                    <div class="panel-body">
+                        <div data-property="data.properties.type"></div>
+                    </div>
+                </div>
+            </div>
+            <script data-template="ArchiStrasbourg" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/archi/png/archi.png" class="category-icon" /> <%-data.properties.label%></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p><address><%-data.properties.adresse%></address></p>
+                                <p><span class="field-label">Archi-Strasbourg :</span> <a href="http://archi-strasbourg.org/?archiAffichage=adresseDetail&archiIdAdresse=<%=data.properties.id%>" target="_blank">http://archi-strasbourg.org/?archiAffichage=adresseDetail&archiIdAdresse=<%=data.properties.id%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="http://archi-strasbourg.org/getPhotoSquare.php?id=<%-data.properties.image%>" alt="" />
+                            </div>
+                        </div>
+                    </div>
                  </div>
             </script>
 
