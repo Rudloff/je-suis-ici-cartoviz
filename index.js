@@ -359,7 +359,9 @@
         scroll = !(scroll == 'no' || scroll == 'false' || scroll == '0');
         var map = result.map = L.map(mapElement[0], {
             zoomControl : false,
-            scrollWheelZoom : scroll
+            scrollWheelZoom : scroll,
+            minZoom: 14,
+            maxBounds: L.latLngBounds(L.latLng(48.6402, 7.6514), L.latLng(48.4896, 7.8466))
         });
         map.addControl(L.control.zoom({
             position : 'topright'
