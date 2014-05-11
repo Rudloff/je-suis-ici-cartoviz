@@ -20,12 +20,12 @@ var style = Utils.extendStyle({
 }, zoomLevels, {
     '[zoom<16]' : {
         '[type="ArchiStrasbourg"]' : {
-            'marker-fill' : '#000000'
+            'marker-fill' : '#CC66CC'
         }
     },
     '[zoom>=16]' : {
         'marker-allow-overlap' : true,
-        'marker-file' : 'url(../svg/awsome/dot-circle-o.svg)'
+        'marker-file' : 'url(../svg/icones-pastille/musee-monuments.svg)'
     }
 });
 

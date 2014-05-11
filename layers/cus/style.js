@@ -24,6 +24,9 @@ var style = Utils.extendStyle({
         },
         '[type="Parking"]' : {
             'marker-fill' : '#2E318C'
+        },
+        '[type="Spectacle"]' : {
+            'marker-fill' : '#000000'
         }
     },
     '[zoom>=16]' : {
@@ -34,6 +37,9 @@ var style = Utils.extendStyle({
         },
         '[type="Parking"]' : {
             'marker-file' : 'url(svg/parking.svg)',
+        },
+        '[type="Spectacle"]' : {
+            'marker-file' : 'url(../svg/awsome/ticket.svg)',
         }
     }
 });

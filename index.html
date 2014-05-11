@@ -115,7 +115,7 @@ p,h3 {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#" data-map-layer-selector="cus">Services publiques</a></li>
-                    <li><a href="#" data-map-layer-selector="unistra">Enseignement supérieur et recherche</a></li>
+                    <li><a href="#" data-map-layer-selector="unistra">Enseignement supérieur</a></li>
                     <li><a href="#" data-map-layer-selector="archi">Architecture</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -175,7 +175,7 @@ p,h3 {
             </script>
             <script data-template="Velhop" type="text/template">
                  <div class="panel panel-default">
-                    <div class="panel-heading"><img src="layers/cus/svg/velhop.svg" class="category-icon" /> <%-data.properties.label%> (<%-data.properties.mode%>)</div>
+                    <div class="panel-heading"><img src="layers/cus/svg/velhop.svg" class="category-icon" /> <%-data.properties.label%></div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
@@ -208,7 +208,19 @@ p,h3 {
                     </div>
                 </div>
             </div>
-
+            <script data-template="Unistra" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/unistra/svg/unistra.svg" class="category-icon" /> <%-data.properties.label%></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p><%-data.properties.description%></p>
+                                <p><a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%></a></p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </script>
 
         </div>
         <div data-map-layer="archi" data-visible="true"

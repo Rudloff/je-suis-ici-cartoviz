@@ -3,12 +3,13 @@
     {
       "Datasource": {
         "dbname": "je_suis_ici", 
-        "user" : "postgres",
+        "user" : "pierre",
+        "password": "bahamut00",
         "host" : "localhost",
         "port" : 5432,
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "the_geom_webmercator", 
-        "table": "( select id, type,  (properties->>'label') as label, properties::text as properties, ST_AsGeoJson(ST_Centroid(geometry)) as geometry, the_geom_webmercator from objects_webmercator where type in ('Spectacle', 'Velhop', 'Parking', 'Citiz', 'Tourisme', 'Bibliotheque', 'CTS' ) ) AS data",
+        "table": "( select id, type,  (properties->>'label') as label, properties::text as properties, ST_AsGeoJson(ST_Centroid(geometry)) as geometry, the_geom_webmercator from objects_webmercator where type in ('Sanisette', 'Police', 'Pharmacy', 'SpotWifi', 'EtablissementHospitalier', 'Kiosque', 'LaPoste', 'EspacePublique' ) ) AS data", 
         "type": "postgis"
       }, 
       "class": "objects",

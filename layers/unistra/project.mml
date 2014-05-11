@@ -8,7 +8,7 @@
         "port" : 5432,
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "the_geom_webmercator", 
-        "table": "( select id, type,  (properties->>'label') as label, properties::text as properties, ST_AsGeoJson(ST_Centroid(geometry)) as geometry, the_geom_webmercator from objects_webmercator where type in ('Unistra' ) ) AS data", 
+        "table": "( select id, type,  (properties->>'label') as label, properties::text as properties, ST_AsGeoJson(ST_Centroid(geometry)) as geometry, the_geom_webmercator from objects_webmercator where type in ('Unistra' ) AND (properties->>'label') IS NOT NULL ) AS data",
         "type": "postgis"
       }, 
       "class": "objects",

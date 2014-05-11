@@ -14,11 +14,15 @@ listener = new MosaicDistil.LogListener({
 
 var dataSets = [];
 
-dataSets.push(SpectacleConfig())
-dataSets.push(VelhopConfig())
-dataSets.push(ParkingConfig())
-dataSets.push(UnistraConfig())
-dataSets.push(ArchiConfig())
+dataSets.push(SpectacleConfig());
+dataSets.push(VelhopConfig());
+dataSets.push(ParkingConfig());
+dataSets.push(UnistraConfig());
+dataSets.push(ArchiConfig());
+dataSets.push(CitizConfig());
+dataSets.push(TourismeConfig());
+dataSets.push(BiblioConfig());
+dataSets.push(CTSConfig());
 
 var dataProvider = new MosaicDistil.CsvDataProvider({
     dataSets : dataSets,
@@ -40,7 +44,7 @@ return dataProvider.handleAll(listener).fail(function(err) {
 function SpectacleConfig() {
     return Utils
             .newDataSet({
-                "path" : "strasbourg-spectacles.csv",
+                "path" : "localisation-salles-spectacles.csv",
                 "url" : "http://media.strasbourg.eu/alfresco/d/d/workspace/SpacesStore/dad0d62e-83d8-4d1e-b212-23ddafac97b1/20120123-StrasPlus-Acces_salles_spectacle.csv",
                 transform : function(obj) {
                     return {
@@ -122,9 +126,10 @@ function UnistraConfig() {
                         properties : _.extend({
                             type : 'Unistra'
                         }, this._toProperties(obj, {
-                            exclude : [ 'id', 'related_to_poi', 'tags', 'time_created', 'time_modified', 'type' ],
+                            exclude : [ 'id', 'related_to_poi', 'tags', 'time_created', 'time_modified' ],
                             convert : {
-                                'name' : 'label'
+                                'name' : 'label',
+                                'type': 'category'
                             },
                             dataTypes : {}
                         })),
@@ -146,6 +151,7 @@ function ArchiConfig() {
                         properties : _.extend({
                             type : 'ArchiStrasbourg'
                         }, this._toProperties(obj, {
+                            exclude : [ 'latitude', 'longitude' ],
                             convert : {
                                 'nom' : 'label'
                             },
@@ -153,6 +159,103 @@ function ArchiConfig() {
                         })),
                         geometry : this._toGeometryPointFromCoords(obj, 'latitude',
                                 'longitude')
+                    }
+                }
+            });
+}
+
+function CitizConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "localisation-stations-voiture-libre-service-autotrement.csv",
+                "url" : "https://raw.githubusercontent.com/Rudloff/open-data-strasbourg/master/localisation-stations-voiture-libre-service-autotrement.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'Citiz'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'go/x', 'go/y', 'id', 'ic' ],
+                            convert : {
+                                'ln' : 'label'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPointFromCoords(obj, 'go/y',
+                                'go/x')
+                    }
+                }
+            });
+}
+
+function TourismeConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "localisation-offices-tourisme-cus.csv",
+                "url" : "http://media.strasbourg.eu/alfresco/d/a/workspace/SpacesStore/5ee63fcf-e1a9-470e-b530-2488cd972206/CUS_CUS_DCOM_OFTOU.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'Tourisme'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'Coordonnees_WGS84', 'URL_NFC' ],
+                            convert : {
+                                'Intitule_Point_Acces' : 'label',
+                                'URL_QRCode': 'url'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPoint(obj.Coordonnees_WGS84)
+                    }
+                }
+            });
+}
+
+function BiblioConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "localisation-mediatheques-bibliotheques-cus.csv",
+                "url" : "http://media.strasbourg.eu/alfresco/d/a/workspace/SpacesStore/b756d34e-d394-4a93-b3be-f7d636909b44/CUS_CUS_DCOM_BIBLI.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'Bibliotheque'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'Coordonnees_WGS84', 'URL_NFC' ],
+                            convert : {
+                                'Intitule_Point_Acces' : 'label',
+                                'URL_QRCode': 'url'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPoint(obj.Coordonnees_WGS84)
+                    }
+                }
+            });
+}
+
+function CTSConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "cts-stops.csv",
+                "url" : "https://raw.githubusercontent.com/Rudloff/open-data-strasbourg/master/cts-stops.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'CTS'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'stop_id', 'stop_lat', 'stop_lon' ],
+                            convert : {
+                                'stop_name' : 'label',
+                                'stop_url': 'url'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPointFromCoords(obj, 'stop_lat',
+                                'stop_lon')
                     }
                 }
             });
