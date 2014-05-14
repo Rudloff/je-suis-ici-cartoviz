@@ -163,7 +163,7 @@ p,h3 {
             </div>
             <script data-template="Spectacle" type="text/template">
                  <div class="panel panel-default">
-                    <div class="panel-heading"> <%-data.properties.label%></div>
+                    <div class="panel-heading"><img src="layers/cus/svg/spectacle.svg" class="category-icon" /> <%-data.properties.label%></div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-8">
@@ -190,9 +190,46 @@ p,h3 {
                     <div class="panel-heading"><img src="layers/cus/svg/citiz.svg" class="category-icon" /> <%-data.properties.label%></div>
                  </div>
             </script>
+            <script data-template="CTS" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/cus/svg/cts.svg" class="category-icon" /> Arrêt <%-data.properties.label%></div>
+                 <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p><span class="field-label">Fiches horaires :</span> <a href="<%=data.properties.url%><%=data.properties.stop_code%>" target="_blank"><%=data.properties.url%><%=data.properties.stop_code%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                                <p><span class="field-label">Prochains passages :</span> <a href="http://www.cts-strasbourg.eu/fr/se-deplacer/temps-reel/#<%=data.properties.stop_code%>" target="_blank">http://www.cts-strasbourg.eu/fr/se-deplacer/temps-reel/#<%=data.properties.stop_code%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </script>
             <script data-template="Parking" type="text/template">
                  <div class="panel panel-default">
                     <div class="panel-heading"><img src="layers/cus/svg/parking.svg" class="category-icon" /> Parking <%-data.properties.label%></div>
+                 </div>
+            </script>
+            <script data-template="Tourisme" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/cus/svg/tourisme.svg" class="category-icon" /> <%-data.properties.label%></div>
+                 <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p><span class="field-label">StrasPlus :</span> <a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </script>
+            <script data-template="Bibliotheque" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/cus/svg/biblio.svg" class="category-icon" /> <%-data.properties.label%></div>
+                 <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p><span class="field-label">StrasPlus :</span> <a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
                  </div>
             </script>
 

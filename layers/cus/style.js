@@ -26,10 +26,19 @@ var style = Utils.extendStyle({
             'marker-fill' : '#2E318C'
         },
         '[type="Spectacle"]' : {
-            'marker-fill' : '#000000'
+            'marker-fill' : '#ff6600'
         },
         '[type="Citiz"]' : {
             'marker-fill' : '#4ac2b6ff'
+        },
+        '[type="Tourisme"]' : {
+            'marker-fill' : '#008000'
+        },
+        '[type="CTS"]' : {
+            'marker-fill' : '#006F58'
+        },
+        '[type="Bibliotheque"]' : {
+            'marker-fill' : '#008080'
         }
     },
     '[zoom>=16]' : {
@@ -42,10 +51,19 @@ var style = Utils.extendStyle({
             'marker-file' : 'url(svg/parking.svg)',
         },
         '[type="Spectacle"]' : {
-            'marker-file' : 'url(../svg/awsome/ticket.svg)',
+            'marker-file' : 'url(svg/spectacle.svg)',
         },
         '[type="Citiz"]' : {
             'marker-file' : 'url(svg/citiz.svg)',
+        },
+        '[type="Tourisme"]' : {
+            'marker-file' : 'url(svg/tourisme.svg)',
+        },
+        '[type="CTS"]' : {
+            'marker-file' : 'url(svg/cts.svg)',
+        },
+        '[type="Bibliotheque"]' : {
+            'marker-file' : 'url(svg/biblio.svg)',
         }
     }
 });
