@@ -27,6 +27,9 @@ var style = Utils.extendStyle({
         },
         '[type="Spectacle"]' : {
             'marker-fill' : '#000000'
+        },
+        '[type="Citiz"]' : {
+            'marker-fill' : '#4ac2b6ff'
         }
     },
     '[zoom>=16]' : {
@@ -40,6 +43,9 @@ var style = Utils.extendStyle({
         },
         '[type="Spectacle"]' : {
             'marker-file' : 'url(../svg/awsome/ticket.svg)',
+        },
+        '[type="Citiz"]' : {
+            'marker-file' : 'url(svg/citiz.svg)',
         }
     }
 });
