@@ -320,7 +320,8 @@
                     utfgridUrl = appendRandomParam(utfgridUrl);
                 }
                 var gridLayer = new L.UtfGrid(utfgridUrl, {
-                    zIndex : zIndex + 1000
+                    zIndex : zIndex + 1000,
+                    useJsonP: false
                 });
                 var html = elm.html();
 
