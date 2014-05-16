@@ -43,6 +43,10 @@ module.exports = function(grunt) {
             logos: {
                 src: 'img/*',
                 dest: 'build/'
+            },
+            icons: {
+                src: ['layers/*/svg/*.svg', 'layers/*/png/*.png'],
+                dest: 'build/'
             }
         }
     });
