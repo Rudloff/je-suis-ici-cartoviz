@@ -117,6 +117,7 @@ p,h3 {
                     <li><a href="#" data-map-layer-selector="cus">Services publiques</a></li>
                     <li><a href="#" data-map-layer-selector="unistra">Enseignement supérieur</a></li>
                     <li><a href="#" data-map-layer-selector="archi">Architecture</a></li>
+                    <li><a href="#" data-map-layer-selector="divers">Divers</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -195,7 +196,7 @@ p,h3 {
                     <div class="panel-heading"><img src="layers/cus/svg/cts.svg" class="category-icon" /> Arrêt <%-data.properties.label%></div>
                  <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <p><span class="field-label">Fiches horaires :</span> <a href="<%=data.properties.url%><%=data.properties.stop_code%>" target="_blank"><%=data.properties.url%><%=data.properties.stop_code%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
                                 <p><span class="field-label">Prochains passages :</span> <a href="http://www.cts-strasbourg.eu/fr/se-deplacer/temps-reel/#<%=data.properties.stop_code%>" target="_blank">http://www.cts-strasbourg.eu/fr/se-deplacer/temps-reel/#<%=data.properties.stop_code%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
                             </div>
@@ -213,7 +214,7 @@ p,h3 {
                     <div class="panel-heading"><img src="layers/cus/svg/tourisme.svg" class="category-icon" /> <%-data.properties.label%></div>
                  <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <p><span class="field-label">StrasPlus :</span> <a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
                             </div>
                         </div>
@@ -225,7 +226,7 @@ p,h3 {
                     <div class="panel-heading"><img src="layers/cus/svg/biblio.svg" class="category-icon" /> <%-data.properties.label%></div>
                  <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <p><span class="field-label">StrasPlus :</span> <a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
                             </div>
                         </div>
@@ -255,7 +256,7 @@ p,h3 {
                     <div class="panel-heading"><img src="layers/unistra/svg/unistra.svg" class="category-icon" /> <%-data.properties.label%></div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <p><%-data.properties.description%></p>
                                 <p><a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%></a></p>
                             </div>
@@ -296,8 +297,35 @@ p,h3 {
                     </div>
                  </div>
             </script>
-
-
+        </div>
+        <div data-map-layer="divers" data-visible="true"
+            data-tiles-url="tiles/layers/divers/{z}/{x}/{y}.png"
+            data-utfgrid-url="tiles/layers/divers/{z}/{x}/{y}.grid.json?callback={cb}"
+            data-panel="#details" data-action="mouseover,click">
+            <div class="attribution">
+                &copy; <a href="http://fr.wikipedia.org/">Wikipédia</a>
+            </div>
+            <div data-template="default">
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-property="data.properties.label"></div>
+                    <div class="panel-body">
+                        <div data-property="data.properties.type"></div>
+                    </div>
+                </div>
+            </div>
+            <script data-template="Wikipedia" type="text/template">
+                 <div class="panel panel-default">
+                    <div class="panel-heading"><img src="layers/divers/svg/wikipedia.svg" class="category-icon" /> <%-data.properties.label%></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><span class="field-label">Wikipédia :</span> <a href="<%=data.properties.url%>" target="_blank"><%=data.properties.url%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                                <p><span class="field-label">Wikipédia (mobile) :</span> <a href="<%=data.properties.mobileurl%>" target="_blank"><%=data.properties.mobileurl%>&nbsp;<i class="fa fa-sign-out"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </script>
         </div>
     </div>
     <div class="panels hidden" id="details"></div>

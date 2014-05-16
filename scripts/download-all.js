@@ -23,6 +23,7 @@ dataSets.push(CitizConfig());
 dataSets.push(TourismeConfig());
 dataSets.push(BiblioConfig());
 dataSets.push(CTSConfig());
+dataSets.push(WikipediaConfig());
 
 var dataProvider = new MosaicDistil.CsvDataProvider({
     dataSets : dataSets,
@@ -256,6 +257,30 @@ function CTSConfig() {
                         })),
                         geometry : this._toGeometryPointFromCoords(obj, 'stop_lat',
                                 'stop_lon')
+                    }
+                }
+            });
+}
+
+function WikipediaConfig() {
+    return Utils
+            .newDataSet({
+                "path" : "wikipedia-strasbourg.csv",
+                "url" : "https://github.com/Rudloff/open-data-strasbourg/raw/master/wikipedia-strasbourg.csv",
+                transform : function(obj) {
+                    return {
+                        type : 'Feature',
+                        properties : _.extend({
+                            type : 'Wikipedia'
+                        }, this._toProperties(obj, {
+                            exclude : [ 'distance', 'lat', 'lng', 'type' ],
+                            convert : {
+                                'title' : 'label'
+                            },
+                            dataTypes : {}
+                        })),
+                        geometry : this._toGeometryPointFromCoords(obj, 'lat',
+                                'lng')
                     }
                 }
             });
