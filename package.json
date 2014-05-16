@@ -24,5 +24,12 @@
     "engines" : {
         "node" : "*"
     },
-    "homepage" : "https://github.com/ubimix/tilepin-example"
+    "homepage" : "https://github.com/ubimix/tilepin-example",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-htmlmin": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-cssmin": "latest"
+    }
 }
