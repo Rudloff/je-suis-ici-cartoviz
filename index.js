@@ -378,6 +378,9 @@
         map.on('zoomend', function() {
             refreshMarker();
         });
+        $(document).on('click', '.closeBtn', function() {
+            $('.panels').addClass('hidden');
+        });
         return result;
     }
 
