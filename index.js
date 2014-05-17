@@ -381,6 +381,19 @@
         $(document).on('click', '.closeBtn', function() {
             $('.panels').addClass('hidden');
         });
+        if (navigator.geolocation) {
+            $('#geoloc').click(function() {
+                $('#geoloc-loading').removeClass('hidden');
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    $('#geoloc-loading').addClass('hidden');
+                    mapInfo.map.setView(L.latLng(pos.coords.latitude, pos.coords.longitude), zoom);
+                }, function () {
+                    $('#geoloc-loading').addClass('hidden');
+                });
+            });
+        } else {
+            $('#geoloc').hide();
+        }
         return result;
     }
 
