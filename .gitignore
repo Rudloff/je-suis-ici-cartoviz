@@ -11,3 +11,5 @@ sql
 tmp
 /sandbox
 .thumb.png
+build/
+project.tilepin.properties
