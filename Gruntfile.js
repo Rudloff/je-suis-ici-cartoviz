@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 dest: 'build/'
             },
             icons: {
-                src: ['layers/*/svg/*.svg', 'layers/*/png/*.png'],
+                src: ['layers/*/svg/*.svg', 'layers/*/png/*.png', 'libs/**/*.woff'],
                 dest: 'build/'
             },
             manifest: {
