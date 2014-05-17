@@ -47,6 +47,10 @@ module.exports = function(grunt) {
             icons: {
                 src: ['layers/*/svg/*.svg', 'layers/*/png/*.png'],
                 dest: 'build/'
+            },
+            manifest: {
+                src: ['manifest.webapp'],
+                dest: 'build/'
             }
         }
     });
