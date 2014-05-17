@@ -100,6 +100,17 @@ p,h3 {
     background-position: left;
     padding-left:32px;
 }
+
+.nav .selected {
+    border-bottom: 2px solid #777;
+}
+
+@media (max-width: 768px) {
+    .nav .selected {
+        font-weight:bold;
+        border:0;
+    }
+}
 </style>
 
 <script type="text/javascript" src="index.js"></script>
@@ -121,10 +132,10 @@ p,h3 {
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" data-map-layer-selector="cus">Services publiques</a></li>
-                    <li><a href="#" data-map-layer-selector="unistra">Enseignement supérieur</a></li>
-                    <li><a href="#" data-map-layer-selector="archi">Architecture</a></li>
-                    <li><a href="#" data-map-layer-selector="divers">Divers</a></li>
+                    <li><a href="#" class="selected" data-map-layer-selector="cus">Services publiques</a></li>
+                    <li><a href="#" class="selected" data-map-layer-selector="unistra">Enseignement supérieur</a></li>
+                    <li><a href="#" class="selected" data-map-layer-selector="archi">Architecture</a></li>
+                    <li><a href="#" class="selected" data-map-layer-selector="divers">Divers</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle"
