@@ -396,7 +396,7 @@
         }
         $('#credits').click(function () {
             var panel = $('#details');
-            panel.html('<div class="panel panel-default"><div class="panel-heading">&copy; Crédits<a class="closeBtn">✖</a></div><div class="panel-body"><div><ul><li>Basé sur <a target="_blank" href="http://je-suis-ici.com/">Je suis ici</a></li><li>Adapté pour Strasbourg par <a target="_blank" href="http://rudloff.pro/">Pierre Rudloff</a></li><li>Icône dessinée par <a target="_blank" href="http://olivierhaquette.fr/">Olivier Haquette</a></li><li>Code disponible <a target="_blank" href="https://github.com/Rudloff/je-suis-ici-cartoviz" title="je-suis-ici-cartoviz">sur Github</a></li></ul></div></div></div>');
+            panel.html('<div class="panel panel-default"><div class="panel-heading">&copy; Crédits<a class="closeBtn">✖</a></div><div class="panel-body"><div class="row"><div class="col-md-8"><ul><li>Basé sur <a target="_blank" href="http://je-suis-ici.com/">Je suis ici</a></li><li>Adapté pour Strasbourg par <a target="_blank" href="http://rudloff.pro/">Pierre Rudloff</a></li><li>Icône dessinée par <a target="_blank" href="http://olivierhaquette.fr/">Olivier Haquette</a></li><li>Code disponible <a target="_blank" href="https://github.com/Rudloff/je-suis-ici-cartoviz" title="je-suis-ici-cartoviz">sur Github</a></li></ul></div><div class="col-md-2"><img src="img/logo_90.png" alt="CartoStras" /></div></div></div></div>');
             panel.removeClass('hidden');
         });
         return result;
