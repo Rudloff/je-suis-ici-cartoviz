@@ -378,9 +378,36 @@
         map.on('zoomend', function() {
             refreshMarker();
         });
+        var distantURL = 'http://carto.rudloff.pro/';
         $(document).on('click', '.closeBtn', function() {
             $('.panels').addClass('hidden');
+        }).on('offline', function (e) {
+            $.each(layers, function (index, layer) {
+                layer.tiles._url = layer.tiles._url.replace(distantURL, '');
+                if (layer.grid) {
+                    layer.grid._url = layer.grid._url.replace(distantURL, '');
+                }
+            });
+            map.options.maxZoom = 16;
+        }).on('online', function (e) {
+            $.each(layers, function (index, layer) {
+                layer.tiles._url = distantURL + layer.tiles._url;
+                if (layer.grid) {
+                    layer.grid._url = distantURL + layer.grid._url;
+                }
+            });
+            map.options.maxZoom = 18;
         });
+        if (navigator.onLine) {
+            $.each(layers, function (index, layer) {
+                layer.tiles._url = distantURL + layer.tiles._url;
+                if (layer.grid) {
+                    layer.grid._url = distantURL + layer.grid._url;
+                }
+            });
+        } else {
+            map.options.maxZoom = 16;
+        }
         if (navigator.geolocation) {
             $('#geoloc').click(function() {
                 $('#geoloc-loading').removeClass('hidden');
