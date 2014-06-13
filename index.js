@@ -378,7 +378,7 @@
         map.on('zoomend', function() {
             refreshMarker();
         });
-        var distantURL = 'http://carto.rudloff.pro/';
+        var distantURL = 'https://carto.rudloff.pro/';
         $(document).on('click', '.closeBtn', function() {
             $('.panels').addClass('hidden');
         }).on('offline', function (e) {
