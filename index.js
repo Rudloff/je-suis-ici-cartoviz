@@ -3,8 +3,19 @@
 
     $(function() {
         mapInfo = initMap();
+        var enabledLayers;
+        if (window.location.hash) {
+            enabledLayers = JSON.parse(window.location.hash.replace('#', ''));
+        } else {
+            enabledLayers = ["cus","unistra","archi","divers"];
+        }
         _.each(mapInfo.layers, function(info, id) {
-            setLayerVisibility(info, info.visible);
+            if (enabledLayers.indexOf(id) >= 0 || id == 'background') {
+                setLayerVisibility(info, info.visible);
+            } else if (enabledLayers.indexOf(id) == -1) {
+                $('[data-map-layer-selector=' + id + ']').removeClass('selected');
+                setLayerVisibility(info, false);
+            }
         })
         initLayerSwitchers();
         initPrinting();
@@ -172,10 +183,29 @@
         })
     }
 
+    function updateHash(id, add) {
+        var layers;
+        if (window.location.hash) {
+            layers = JSON.parse(window.location.hash.replace('#', ''));
+        } else {
+            layers = ["cus","unistra","archi","divers"];
+        }
+        if (add) {
+            layers.push(id);
+        } else {
+            var index = layers.indexOf(id);
+            if (index >= 0) {
+                layers.splice(layers.indexOf(id), 1);
+            }
+        }
+        window.location.hash = JSON.stringify(layers);
+    }
+
     function toggleLayer(id) {
         var info = mapInfo.layers[id];
         if (!info)
             return;
+        updateHash(id, !info.visible);
         setLayerVisibility(info, !info.visible);
     }
 
