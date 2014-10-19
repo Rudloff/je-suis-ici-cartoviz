@@ -322,6 +322,8 @@
                 }
                 var gridLayer = new L.UtfGrid(utfgridUrl, {
                     zIndex : zIndex + 1000,
+                    minZoom : minZoom,
+                    maxZoom : maxZoom,
                     useJsonP: false
                 });
                 var html = elm.html();
