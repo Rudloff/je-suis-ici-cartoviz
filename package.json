@@ -30,6 +30,7 @@
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-htmlmin": "latest",
         "grunt-contrib-copy": "latest",
-        "grunt-contrib-cssmin": "latest"
+        "grunt-contrib-cssmin": "latest",
+        "grunt-text-replace": "latest"
     }
 }

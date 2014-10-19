@@ -39,6 +39,22 @@ module.exports = function(grunt) {
                 dest: 'build/index.html'
             }
         },
+        replace: {
+            html: {
+                src: 'build/index.html',
+                dest: 'build/index.html',
+                replacements: [
+                    {
+                        from: 'data-tiles-url="tiles/layers/', 
+                        to: 'data-tiles-url="https://carto.rudloff.pro/tiles/layers/'
+                    },
+                    {
+                        from: 'data-utfgrid-url="tiles/layers/', 
+                        to: 'data-utfgrid-url="https://carto.rudloff.pro/tiles/layers/'
+                    }
+                ]
+            }
+        },
         copy: {
             logos: {
                 src: 'img/*',
@@ -60,8 +76,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-text-replace');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'htmlmin', 'cssmin', 'copy']);
+    grunt.registerTask('default', ['uglify', 'htmlmin', 'replace', 'cssmin', 'copy']);
 
 };
