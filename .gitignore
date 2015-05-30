@@ -13,3 +13,5 @@ tmp
 .thumb.png
 build/
 project.tilepin.properties
+libs/
+tiles/
