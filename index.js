@@ -5,7 +5,7 @@
         mapInfo = initMap();
         var enabledLayers;
         if (window.location.hash) {
-            enabledLayers = JSON.parse(window.location.hash.replace('#', ''));
+            enabledLayers = JSON.parse(decodeURIComponent(window.location.hash.replace('#', '')));
         } else {
             enabledLayers = ["cus","unistra","archi","divers"];
         }
@@ -186,7 +186,7 @@
     function updateHash(id, add) {
         var layers;
         if (window.location.hash) {
-            layers = JSON.parse(window.location.hash.replace('#', ''));
+            layers = JSON.parse(decodeURIComponent(window.location.hash.replace('#', '')));
         } else {
             layers = ["cus","unistra","archi","divers"];
         }
